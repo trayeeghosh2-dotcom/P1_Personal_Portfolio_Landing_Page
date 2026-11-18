@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trayee Ghosh | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8faff;
+    color: #26364b;
+    line-height: 1.7;
+}
+
+:root {
+    --blue: #1765d1;
+    --dark: #102c52;
+    --light: #eaf3ff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px #00000012;
+}
+
+nav {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 22px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: bold;
+}
+
+nav ul a:hover {
+    color: var(--blue);
+}
+
+.menu {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(120deg, #eaf3ff, #d7e8ff);
+    padding: 90px 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: var(--dark);
+    line-height: 1.2;
+}
+
+.hero-text h1 span {
+    color: var(--blue);
+}
+
+.hero-text h2 {
+    margin: 15px 0;
+    color: #53677f;
+}
+
+.hero-text p {
+    margin-bottom: 22px;
+    color: #64748b;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--dark);
+    transform: translateY(-3px);
+}
+
+.profile {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--dark));
+    border: 9px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 75px;
+    font-weight: bold;
+    box-shadow: 0 10px 30px #102c5230;
+}
+
+/* COMMON SECTIONS */
+
+section {
+    padding: 75px 0;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading h2 {
+    font-size: 34px;
+    color: var(--dark);
+}
+
+.heading span {
+    color: var(--blue);
+}
+
+.heading p {
+    color: var(--blue);
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* ABOUT */
+
+.about-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #00000010;
+    border-left: 5px solid var(--blue);
+}
+
+.about-box p {
+    margin-bottom: 12px;
+    color: #64748b;
+}
+
+/* SKILLS */
+
+.light {
+    background: #edf4ff;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill {
+    background: white;
+    padding: 25px 12px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #0000000c;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-7px);
+}
+
+.skill h3 {
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.skill p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* EDUCATION */
+
+.education-box {
+    max-width: 750px;
+    margin: auto;
+}
+
+.education-item {
+    background: white;
+    padding: 22px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--blue);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px #00000010;
+}
+
+.education-item h3 {
+    color: var(--dark);
+}
+
+.education-item h4 {
+    color: var(--blue);
+}
+
+.education-item p {
+    color: #64748b;
+}
+
+/* EXPERIENCE */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.experience {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #00000010;
+    transition: 0.3s;
+}
+
+.experience:hover {
+    transform: translateY(-6px);
+}
+
+.experience h3 {
+    color: var(--dark);
+}
+
+.experience h4 {
+    color: var(--blue);
+}
+
+.experience p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* PROJECTS */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #00000012;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+}
+
+.project-image {
+    height: 150px;
+    background: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+}
+
+.project-info {
+    padding: 22px;
+}
+
+.project-info h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.tags {
+    margin-top: 15px;
+}
+
+.tags span {
+    display: inline-block;
+    background: var(--light);
+    color: var(--blue);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin: 3px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: linear-gradient(120deg, #eaf3ff, #d7e8ff);
+    text-align: center;
+}
+
+.contact-box {
+    background: white;
+    padding: 35px;
+    max-width: 700px;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #00000010;
+}
+
+.contact-box p {
+    color: #64748b;
+    margin: 15px 0;
+}
+
+.contact-box a {
+    color: var(--blue);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-size: 14px;
+}
+
+/* ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 0.7s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 800px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 5px 15px #00000015;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 450px) {
+    .profile {
+        width: 190px;
+        height: 190px;
+        font-size: 55px;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .heading h2 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <nav class="container">
+
+        <div class="logo">Trayee<span>.</span></div>
+
+        <button class="menu" id="menu">☰</button>
+
+        <ul id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <p>HELLO, WELCOME TO MY PORTFOLIO</p>
+
+            <h1>Hi, I'm <span>Trayee Ghosh</span></h1>
+
+            <h2>Computer Science Engineering Student</h2>
+
+            <p>
+                I am an aspiring software developer passionate about
+                programming, web development and learning new technologies.
+                I love creating attractive and user-friendly websites.
+            </p>
+
+            <a href="#projects" class="btn">Explore My Projects</a>
+            <a href="#contact" class="btn">Contact Me</a>
+
+        </div>
+
+        <div class="profile">TG</div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="heading">
+            <p>GET TO KNOW ME</p>
+            <h2>About <span>Me</span></h2>
+        </div>
+
+        <div class="about-box reveal">
+
+            <p>
+                I am Trayee Ghosh, a Bachelor of Engineering student
+                in Computer Science Engineering at University Institute
+                of Technology, The University of Burdwan.
+            </p>
+
+            <p>
+                I have knowledge of C, Java, Python, DSA, OOPs, HTML,
+                CSS and JavaScript. I am interested in developing
+                responsive websites and improving my programming skills.
+            </p>
+
+            <p>
+                My career goal is to become a skilled software engineer
+                and build useful technology solutions through continuous
+                learning and practical experience.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="light" id="skills">
+    <div class="container">
+
+        <div class="heading">
+            <p>WHAT I KNOW</p>
+            <h2>My <span>Skills</span></h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill reveal">
+                <div class="icon">💻</div>
+                <h3>C Programming</h3>
+                <p>Programming fundamentals and logic building.</p>
+            </div>
+
+            <div class="skill reveal">
+                <div class="icon">☕</div>
+                <h3>Java</h3>
+                <p>Core Java and OOP concepts.</p>
+            </div>
+
+            <div class="skill reveal">
+                <div class="icon">🐍</div>
+                <h3>Python</h3>
+                <p>Python fundamentals and applications.</p>
+            </div>
+
+            <div class="skill reveal">
+                <div class="icon">🌐</div>
+                <h3>HTML</h3>
+                <p>Creating structured webpages.</p>
+            </div>
+
+            <div class="skill reveal">
+                <div class="icon">🎨</div>
+                <h3>CSS</h3>
+                <p>Styling and responsive design.</p>
+            </div>
+
+            <div class="skill reveal">
+                <div class="icon">⚡</div>
+                <h3>JavaScript</h3>
+                <p>Interactive website development.</p>
+            </div>
+
+            <div class="skill reveal">
+                <div class="icon">🧠</div>
+                <h3>OOPs & DSA</h3>
+                <p>Programming concepts and problem solving.</p>
+            </div>
+
+            <div class="skill reveal">
+                <div class="icon">🛠️</div>
+                <h3>Development Tools</h3>
+                <p>VS Code, DEV C++, IDLE and BlueJ.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+    <div class="container">
+
+        <div class="heading">
+            <p>MY ACADEMIC JOURNEY</p>
+            <h2>My <span>Education</span></h2>
+        </div>
+
+        <div class="education-box">
+
+            <div class="education-item reveal">
+                <h3>Bachelor of Engineering (B.E.)</h3>
+                <h4>Computer Science Engineering Student</h4>
+                <p>University Institute of Technology, Burdwan University</p>
+                <p>2023 – 2027</p>
+            </div>
+
+            <div class="education-item reveal">
+                <h3>Higher Secondary Examination</h3>
+                <h4>Science Student(Physics,Chemistry,Math,Biology)</h4>
+                <p>Bardhaman Bidyarthi Bhaban Girls' High School</p>
+                <p>2023</p>
+            </div>
+
+            <div class="education-item reveal">
+                <h3>Secondary Examination</h3>
+                <p>Bardhaman Bidyarthi Bhaban Girls' High School</p>
+                <p>2021</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="light" id="experience">
+    <div class="container">
+
+        <div class="heading">
+            <p>MY PROFESSIONAL JOURNEY</p>
+            <h2>Internship <span>Experience</span></h2>
+        </div>
+
+        <div class="experience-grid">
+
+            
+            <div class="experience reveal">
+                <div class="icon">💻</div>
+                <h3>SkillCraft Technology</h3>
+                <h4>Internship Experience</h4>
+                <p>Web Development</p>
+                <p>Learning through practical web development tasks
+                and project-based experience.</p>
+            </div>
+
+            <div class="experience reveal">
+                <div class="icon">🚀</div>
+                <h3>InternCircle</h3>
+                <h4>Fullstack Web Development Intern</h4>
+                <p>November – December 2026</p>
+                <p>Working on practical projects using HTML, CSS
+                and JavaScript.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+    <div class="container">
+
+        <div class="heading">
+            <p>MY RECENT WORK</p>
+            <h2>My <span>Projects</span></h2>
+        </div>
+
+        <div class="project-grid">
+
+            <div class="project reveal">
+                <div class="project-image">📝</div>
+                <div class="project-info">
+                    <h3>Interactive Quiz Game</h3>
+                    <p>An interactive quiz application with
+                    questions and score calculation.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project reveal">
+                <div class="project-image">⏱️</div>
+                <div class="project-info">
+                    <h3>Stopwatch Web Application</h3>
+                    <p>A stopwatch with start, pause and
+                    reset functionality.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project reveal">
+                <div class="project-image">✅</div>
+                <div class="project-info">
+                    <h3>To-Do Web App</h3>
+                    <p>A task management application to
+                    organize daily activities.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project reveal">
+                <div class="project-image">🌐</div>
+                <div class="project-info">
+                    <h3>Responsive Landing Page</h3>
+                    <p>A responsive landing page for
+                    desktop and mobile devices.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+    <div class="container">
+
+        <div class="heading">
+            <p>LET'S CONNECT</p>
+            <h2>Contact <span>Me</span></h2>
+        </div>
+
+        <div class="contact-box">
+
+            <h2>Let's Work Together!</h2>
+
+            <p>
+                Have an opportunity or project in mind?
+                Feel free to connect with me.
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:trayeeghosh2@gmail.com">
+                    trayeeghosh2@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <a href="https://github.com/" target="_blank">GitHub</a>
+                |
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>© <span id="year"></span> Trayee Ghosh. All Rights Reserved.</p>
+    <p>Designed with ❤️ using HTML, CSS & JavaScript.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// Mobile Navigation
+
+const menu = document.getElementById("menu");
+const navLinks = document.getElementById("navLinks");
+
+menu.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+    menu.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+});
+
+document.querySelectorAll("#navLinks a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+        menu.textContent = "☰";
+    });
+});
+
+// Automatic Copyright Year
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// Scroll Reveal Animation
+
+const observer = new IntersectionObserver(function(entries) {
+
+    entries.forEach(function(entry) {
+
+        if(entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, {threshold: 0.1});
+
+document.querySelectorAll(".reveal").forEach(function(element) {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
